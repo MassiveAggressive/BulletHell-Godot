@@ -1,0 +1,10 @@
+[gd_scene load_steps=3 format=3 uid="uid://x7j2rnnw1yyi"]
+
+[ext_resource type="Script" path="res://WeaponBase.gd" id="1_8e7py"]
+[ext_resource type="PackedScene" uid="uid://bvff4g2my5rkv" path="res://Core/Weapon/Bullet.tscn" id="2_xtqrt"]
+
+[node name="WeaponBase" type="Node2D"]
+process_mode = 1
+script = ExtResource("1_8e7py")
+BulletScene = ExtResource("2_xtqrt")
+FireRate = 50.0
