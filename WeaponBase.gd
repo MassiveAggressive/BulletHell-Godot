@@ -44,21 +44,19 @@ func _process(delta):
 			else:
 				IsShootAvailable = true
 				CountThisFrame = false
+				TimePool = 0
 				set_process(false)
 	else:
 		CountThisFrame = true
 
-var ForwardVector : Vector2
-
 func HandleTimePool():
 	IsShootAvailable = false
-	ForwardVector = Vector2.from_angle(rotation)
 	while TimePool >= FireDuration:
 		TimePool -= FireDuration
 		Shoot(TimePool)
 
 func Shoot(Delta : float):
 	var Bullet = BulletScene.instantiate()
-	CurrentScene.add_child(Bullet)
-	Bullet.global_position = global_position
+	Bullet.global_position = global_position + Vector2.RIGHT.rotated(global_rotation) * Delta * 200
 	Bullet.global_rotation = global_rotation
+	CurrentScene.add_child(Bullet)

@@ -1,10 +1,13 @@
-[gd_scene load_steps=4 format=3 uid="uid://cw2rjd071ix3c"]
+[gd_scene load_steps=5 format=3 uid="uid://cw2rjd071ix3c"]
 
 [ext_resource type="PackedScene" uid="uid://phl10ersybib" path="res://Core/Player/Player.tscn" id="1_ldvyu"]
+[ext_resource type="Script" path="res://Maps/Level.gd" id="1_rromv"]
 [ext_resource type="PackedScene" uid="uid://bvff4g2my5rkv" path="res://Core/Weapon/Bullet.tscn" id="2_j2wxo"]
 [ext_resource type="Texture2D" uid="uid://boejebmqfwys1" path="res://Assets/SpaceShooterAssets/SpaceShooterAssetPack_BackGrounds.png" id="3_1g2h2"]
 
 [node name="DevMap" type="Node2D"]
+process_mode = 1
+script = ExtResource("1_rromv")
 
 [node name="Player" parent="." instance=ExtResource("1_ldvyu")]
 BulletScene = ExtResource("2_j2wxo")
